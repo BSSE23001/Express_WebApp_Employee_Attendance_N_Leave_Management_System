@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attendance & Leave Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <header class="app-header">
+            <div class="header-left">
+                <h1>Attendance & Leave</h1>
+                <p id="current-date"></p>
+            </div>
+            <div class="header-right">
+                <div class="user-profile">
+                    <span id="logged-in-user">Admin</span>
+                </div>
+            </div>
+        </header>
+        <main class="app-main">
+
+            <!-- Side Navbar -->
+            <aside class="app-sidebar">
+                <nav>
+                    <ul>
+                        <li class="active" data-section="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</li>
+                        <li data-section="employees"><i class="fas fa-users"></i> Employees</li>
+                        <li data-section="attendance"><i class="fas fa-calendar-check"></i> Attendance</li>
+                        <li data-section="leave"><i class="fas fa-calendar-minus"></i> Leave Management</li>
+                    </ul>
+                </nav>
+            </aside>
+            
+            <div class="content-area">
+
+                <!-- Dashboard Section -->
+                <section id="dashboard-section" class="content-section">
+                    <div class="dashboard-header">
+                        <h2>Dashboard Overview</h2>
+                    </div>
+
+                    <!-- Complete Stats Overview -->
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background-color: #4e73df;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Total Employees</h3>
+                                <p id="total-employees">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background-color: #1cc88a;">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Present Today</h3>
+                                <p id="present-today">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background-color: #f6c23e;">
+                                <i class="fas fa-user-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>On Leave</h3>
+                                <p id="on-leave">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background-color: #e74a3b;">
+                                <i class="fas fa-user-times"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Absent Today</h3>
+                                <p id="absent-today">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-charts">
+                        <div class="chart-container">
+                            <canvas id="attendance-chart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="leave-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="recent-activity">
+                        <h3>Recent Leave Requests</h3>
+                        <div class="activity-list" id="recent-leaves">
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
